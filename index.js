@@ -151,7 +151,7 @@ function scoreboard(getScore,innings,number) {
   for(let i=0;i<number;i++){
    let score=getScore(innings);
    result.push(`${i+1}th inning: ${score[0]} - ${score[1]}`);
-   finalAway=finalAway+score[1];
+   finalAway=finalAway+score[0];
    finalHome=finalHome+score[1];
   }
 
@@ -165,3 +165,21 @@ function scoreboard(getScore,innings,number) {
 }
 console.log('Task4');
 scoreboard(getInningScore,inning,9);
+
+/*strech
+1. Predict the output of the code below and explain why this is the output using what you learned today. When you're ready for answers, view an explanation [here](https://www.coderbyte.com/algorithm/3-common-javascript-closure-questions
+
+```js
+(function(){
+  var a = b = 3;
+})();
+console.log("a defined? " + (typeof a !== 'undefined'));
+console.log("b defined? " + (typeof b !== 'undefined'));
+
+Answer: the output will be a undefined , b defined.
+because var a=b=3  equals to var a=(b=3).
+The var only applies to a , and b is global
+a is function level scoped , so when it is referenced outside the function , it is undefined.
+b is global, so it is defined and the value is 3.
+
+*/
